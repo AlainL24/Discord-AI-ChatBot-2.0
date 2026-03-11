@@ -8,7 +8,6 @@ BAD_SITES = [
     "vocabulary"
 ]
 
-
 TRUSTED_DOMAINS = [
     "espn.com",
     "nba.com",
@@ -19,16 +18,9 @@ TRUSTED_DOMAINS = [
     "nytimes.com"
 ]
 
-
 def is_valid_source(title, url):
-    """
-    Filter out irrelevant websites like dictionaries or grammar pages.
-    """
-
     text = (title + url).lower()
-
     for word in BAD_SITES:
         if word in text:
             return False
-
     return True
